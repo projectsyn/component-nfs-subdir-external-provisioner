@@ -3,3 +3,21 @@
 nfs-subdir-external-provisioner is a Commodore component to manage nfs-subdir-external-provisioner.
 
 See the xref:references/parameters.adoc[parameters] reference for further details.
+
+=== Minimal setup
+
+The server is required to be set.
+If the path is not set, the helm chart default of `/nfs-storage` applies.
+
+The component does configure the PV access mode my default to `ReadWriteMany`.
+Default if the helm chart is `ReadWriteOnce`, but this is unusual for NFS.
+
+[source,yaml]
+----
+parameters:
+  nfs_subdir_external_provisioner:
+    helm_values:
+      nfs:
+        server: nfs.local
+        path: /srv/nfs/export
+----

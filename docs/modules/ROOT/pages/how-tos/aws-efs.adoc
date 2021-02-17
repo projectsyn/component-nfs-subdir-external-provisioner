@@ -1,0 +1,45 @@
+== Amazon Web Services EFS
+
+AWS EFS provides filesystem based storage access based on NFS.
+Multiple pods on different nodes can access the same storage (RWX).
+
+An [CSI driver for EFS](https://github.com/kubernetes-sigs/aws-efs-csi-driver) is being built by AWS, but as of today, "Currently only static provisioning is supported".
+This is not the user experience we want to provide and therefore the Kubernetes NFS Subdir External Provisioner is the most practicable operator currently available.
+
+=== Prerequisites
+
+The operator requires an already set up EFS.
+This can be created manually in the AWS UI or better through a management tool like Terraform.
+
+The NFS server name is specified by the EFS FSID and the AWS region.
+Be aware also to set the EFS specific mount options.
+
+[source,yaml]
+----
+parameters:
+  nfs_subdir_external_provisioner:
+    helm_values:
+      nfs:
+        server: fs-e<fsid>.efs.<region>.amazonaws.com
+        path: /
+----
+
+=== EFS specific NFS mount options
+
+AWS recommends to use a [https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-general.html](specific set of NFS mount options) when using EFS NFS.
+
+[source,yaml]
+----
+parameters:
+  nfs_subdir_external_provisioner:
+    helm_values:
+      nfs:
+        mountOptions:
+          - nfsvers=4.1
+          - rsize=1048576
+          - wsize=1048576
+          - hard
+          - timeo=600
+          - retrans=2
+          - noresvport
+----

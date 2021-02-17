@@ -7,4 +7,5 @@ local params = inv.parameters.nfs_subdir_external_provisioner;
 
 // Define outputs below
 {
+  '00_namespace': kube.Namespace(params.namespace),
 }
