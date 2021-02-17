@@ -1,0 +1,3 @@
+parameters:
+  nfs_subdir_external_provisioner:
+    namespace: syn-nfs-subdir-external-provisioner
