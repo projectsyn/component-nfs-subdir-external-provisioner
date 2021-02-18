@@ -2,6 +2,8 @@
 
 This is a [Commodore][commodore] Component for the [Kubernetes NFS Subdir External Provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) provided by the Kubernetes Community.
 
+The Kubernetes NFS Subdir External Provisioner is the successor of the former Kubernetes NFS-Client Provisioner project.
+
 This repository is part of Project Syn.
 For documentation on Project Syn and this component, see https://syn.tools.
 
