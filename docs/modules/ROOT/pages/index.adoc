@@ -2,6 +2,8 @@
 
 nfs-subdir-external-provisioner is a Commodore component to manage nfs-subdir-external-provisioner.
 
+The Kubernetes NFS Subdir External Provisioner is the successor of the former Kubernetes NFS-Client Provisioner project.
+
 See the xref:references/parameters.adoc[parameters] reference for further details.
 
 === Minimal setup
