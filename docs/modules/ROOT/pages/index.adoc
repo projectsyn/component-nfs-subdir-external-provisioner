@@ -9,8 +9,8 @@ See the xref:references/parameters.adoc[parameters] reference for further detail
 The server is required to be set.
 If the path is not set, the helm chart default of `/nfs-storage` applies.
 
-The component does configure the PV access mode my default to `ReadWriteMany`.
-Default if the helm chart is `ReadWriteOnce`, but this is unusual for NFS.
+The Helm chart configures the provisioner to create PVs with access mode `ReadWriteOnce` by default.
+However, the component overrides this with `ReadWriteMany` which matches the usual use case for NFS.
 
 [source,yaml]
 ----
