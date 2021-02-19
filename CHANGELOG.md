@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 
-- …
+- Initial open-source implementation ([#1])
 
 [Unreleased]: https://github.com/projectsyn/component-nfs-subdir-external-provisioner/compare/v0.1.0...HEAD
+[#1]: https://github.com/projectsyn/component-nfs-subdir-external-provisioner/pull/1
