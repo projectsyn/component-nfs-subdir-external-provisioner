@@ -2,4 +2,24 @@
 
 nfs-subdir-external-provisioner is a Commodore component to manage nfs-subdir-external-provisioner.
 
+The Kubernetes NFS Subdir External Provisioner is the successor of the former Kubernetes NFS-Client Provisioner project.
+
 See the xref:references/parameters.adoc[parameters] reference for further details.
+
+=== Minimal setup
+
+The server is required to be set.
+If the path is not set, the helm chart default of `/nfs-storage` applies.
+
+The Helm chart configures the provisioner to create PVs with access mode `ReadWriteOnce` by default.
+However, the component overrides this with `ReadWriteMany` which matches the usual use case for NFS.
+
+[source,yaml]
+----
+parameters:
+  nfs_subdir_external_provisioner:
+    helm_values:
+      nfs:
+        server: nfs.local
+        path: /srv/nfs/export
+----

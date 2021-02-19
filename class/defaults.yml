@@ -1,3 +1,9 @@
 parameters:
   nfs_subdir_external_provisioner:
     namespace: syn-nfs-subdir-external-provisioner
+    release_name: platform
+    helm_values:
+      storageClass:
+        accessModes: ReadWriteMany
+    charts:
+      nfs_subdir_external_provisioner: 4.0.1

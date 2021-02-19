@@ -11,9 +11,36 @@ default:: `syn-nfs-subdir-external-provisioner`
 The namespace in which to deploy this component.
 
 
-== Example
+== `release_name`
 
+[horizontal]
+type:: string
+default:: `plattform`
+
+The name syn-nfs-subdir-external-provisioner is deployed.
+Usually there is just one deployment and therefore no change is required.
+
+
+== `charts.nfs_subdir_external_provisioner`
+
+[horizontal]
+type:: string
+default:: `4.0.1`
+
+The helm chart version going to be used.
+
+
+== `helm_values`
+
+[horizontal]
+type:: dict
+default::
++
 [source,yaml]
 ----
-namespace: example-namespace
+storageClass:
+  accessModes: ReadWriteMany
 ----
+
+All helm_values are passed to the helm chart.
+This allows to configure all https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/tree/master/charts/nfs-subdir-external-provisioner#configuration[nfs-subdir-external-provisioner helm chart values].

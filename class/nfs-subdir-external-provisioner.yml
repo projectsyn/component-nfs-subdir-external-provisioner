@@ -1,5 +1,11 @@
 parameters:
   kapitan:
+    dependencies:
+      - type: helm
+        source: https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
+        version: ${nfs_subdir_external_provisioner:charts:nfs_subdir_external_provisioner}
+        chart_name: nfs-subdir-external-provisioner
+        output_path: dependencies/nfs-subdir-external-provisioner/helmcharts/nfs-subdir-external-provisioner
     compile:
       - input_paths:
           - nfs-subdir-external-provisioner/component/app.jsonnet
@@ -9,4 +15,11 @@ parameters:
           - nfs-subdir-external-provisioner/component/main.jsonnet
         input_type: jsonnet
         output_path: nfs-subdir-external-provisioner/
-
+      - output_path: nfs-subdir-external-provisioner/01_helmchart
+        input_type: helm
+        input_paths:
+          - nfs-subdir-external-provisioner/helmcharts/nfs-subdir-external-provisioner
+        helm_params:
+          release_name: ${nfs_subdir_external_provisioner:release_name}
+          namespace: ${nfs_subdir_external_provisioner:namespace}
+        helm_values: ${nfs_subdir_external_provisioner:helm_values}
