@@ -1,6 +1,7 @@
 parameters:
   nfs_subdir_external_provisioner:
     namespace: syn-nfs-subdir-external-provisioner
+    multi_instance: true
     release_name: platform
     helm_values:
       storageClass:
