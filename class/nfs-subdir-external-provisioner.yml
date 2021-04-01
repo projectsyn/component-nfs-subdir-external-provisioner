@@ -10,12 +10,12 @@ parameters:
       - input_paths:
           - nfs-subdir-external-provisioner/component/app.jsonnet
         input_type: jsonnet
-        output_path: apps/
+        output_path: apps/${_instance}
       - input_paths:
           - nfs-subdir-external-provisioner/component/main.jsonnet
         input_type: jsonnet
-        output_path: nfs-subdir-external-provisioner/
-      - output_path: nfs-subdir-external-provisioner/01_helmchart
+        output_path: nfs-subdir-external-provisioner/${_instance}
+      - output_path: nfs-subdir-external-provisioner/${_instance}/01_helmchart
         input_type: helm
         input_paths:
           - nfs-subdir-external-provisioner/helmcharts/nfs-subdir-external-provisioner
