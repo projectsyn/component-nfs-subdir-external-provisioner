@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Support for multiple instantiation ([#4])
 
+### Changed
+
+- Update helm chart to version 4.0.6
+- The parameter `release_name` is now instance-specific by default
+
+
 ## [v1.0.0]
 ### Added
 
