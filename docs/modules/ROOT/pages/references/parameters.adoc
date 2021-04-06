@@ -15,17 +15,17 @@ The namespace in which to deploy this component.
 
 [horizontal]
 type:: string
-default:: `plattform`
+default:: `${_instance}`
 
 The name syn-nfs-subdir-external-provisioner is deployed.
-Usually there is just one deployment and therefore no change is required.
+By default, the commodore meta-parameter `parameters._instance` is used. `parameters._instance` is set to the aliased name used for instantiation or the component name for non-aliased instances.
 
 
 == `charts.nfs_subdir_external_provisioner`
 
 [horizontal]
 type:: string
-default:: `4.0.1`
+default:: `4.0.6`
 
 The helm chart version going to be used.
 
