@@ -13,8 +13,8 @@ local nfsMountScc = {
   apiVersion: 'security.openshift.io/v1',
   kind: 'SecurityContextConstraints',
   metadata: {
-   name: 'hostmount-anyuid-nfs-subdir-external-provisioner-scc',
-   namespace: params.namespace,
+    name: 'hostmount-anyuid-nfs-subdir-external-provisioner-scc',
+    namespace: params.namespace,
   },
   users: [
     'system:serviceaccount:' + params.namespace + ':' + instance,
@@ -24,7 +24,7 @@ local nfsMountScc = {
     'emptyDir',
     'nfs',
     'persistentVolumeClaim',
-    'secret'
+    'secret',
   ],
   allowHostDirVolumePlugin: true,
   allowHostIPC: false,
