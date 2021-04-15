@@ -41,9 +41,10 @@ local nfsMountScc = {
   seLinuxContext: {
     type: 'MustRunAs',
   },
-  supplementaryGroups: {
+  supplementalGroups: {
     type: 'RunAsAny',
   },
+  readOnlyRootFilesystem: false,
 };
 
 // Define outputs below
