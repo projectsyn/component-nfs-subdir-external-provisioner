@@ -12,7 +12,7 @@ local nfsMountScc = {
   apiVersion: 'security.openshift.io/v1',
   kind: 'SecurityContextConstraints',
   metadata: {
-    name: 'hostmount-anyuid-scc-' + instance,
+    name: 'hostmount-anyuid-' + instance,
     namespace: params.namespace,
   },
   users: [
