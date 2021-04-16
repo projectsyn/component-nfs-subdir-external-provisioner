@@ -16,7 +16,7 @@ local nfsMountScc = {
     namespace: params.namespace,
     labels: {
       'app.kubernetes.io/name': 'hostmount-anyuid-' + instance,
-      'app.kubernetes.io/instance': 'hostmount-anyuid-' + instance,
+      'app.kubernetes.io/instance': instance,
       'app.kubernetes.io/component': 'nfs-subdir-external-provisioner',
       'app.kubernetes.io/managed-by': 'syn',
     },
