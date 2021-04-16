@@ -14,6 +14,10 @@ local nfsMountScc = {
   metadata: {
     name: 'hostmount-anyuid-' + instance,
     namespace: params.namespace,
+    labels: {
+      'app.kubernetes.io/name': 'hostmount-anyuid-' + instance,
+      'app.kubernetes.io/managed-by': 'syn',
+    },
   },
   users: [
     'system:serviceaccount:' + params.namespace + ':' + instance,
