@@ -28,6 +28,7 @@ local nfsMountScc = {
     'configMap',
     'emptyDir',
     'nfs',
+    'hostPath',
     'persistentVolumeClaim',
     'secret',
   ],
