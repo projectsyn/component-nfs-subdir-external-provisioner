@@ -27,8 +27,8 @@ local nfsMountScc = {
   volumes: [
     'configMap',
     'emptyDir',
-    'nfs',
     'hostPath',
+    'nfs',
     'persistentVolumeClaim',
     'secret',
   ],
