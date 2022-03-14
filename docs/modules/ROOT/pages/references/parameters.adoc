@@ -25,7 +25,7 @@ By default, the commodore meta-parameter `parameters._instance` is used. `parame
 
 [horizontal]
 type:: string
-default:: `4.0.6`
+default:: `4.0.16`
 
 The helm chart version going to be used.
 
