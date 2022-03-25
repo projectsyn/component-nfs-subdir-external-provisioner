@@ -3,8 +3,8 @@
 AWS EFS provides filesystem based storage access based on NFS.
 Multiple pods on different nodes can access the same storage (RWX).
 
-A [CSI driver for EFS](https://github.com/kubernetes-sigs/aws-efs-csi-driver) is being built by AWS, but as of February 2021, "only static provisioning is supported".
-This is not the user experience we want to provide and therefore the Kubernetes NFS Subdir External Provisioner is the most practicable operator currently available.
+A [CSI driver for EFS](https://github.com/kubernetes-sigs/aws-efs-csi-driver) is being built by AWS, but as of February 2021, "only static provisioning is supported."
+This isn't the user experience we want to provide and therefore the Kubernetes NFS Subdir External Provisioner is the most practicable operator currently available.
 
 === Prerequisites
 
