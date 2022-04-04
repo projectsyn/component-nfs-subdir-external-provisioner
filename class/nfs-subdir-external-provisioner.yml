@@ -24,6 +24,6 @@ parameters:
         input_paths:
           - nfs-subdir-external-provisioner/helmcharts/nfs-subdir-external-provisioner
         helm_params:
-          release_name: ${nfs_subdir_external_provisioner:release_name}
+          name: ${nfs_subdir_external_provisioner:release_name}
           namespace: ${nfs_subdir_external_provisioner:namespace}
         helm_values: ${nfs_subdir_external_provisioner:helm_values}
