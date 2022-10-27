@@ -1,0 +1,16 @@
+allowVolumeExpansion: true
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations: null
+  labels:
+    app: nfs-subdir-external-provisioner
+    chart: nfs-subdir-external-provisioner-4.0.17
+    heritage: Helm
+    release: nfs-subdir-external-provisioner
+  name: nfs-client
+parameters:
+  archiveOnDelete: 'true'
+provisioner: cluster.local/nfs-subdir-external-provisioner
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
