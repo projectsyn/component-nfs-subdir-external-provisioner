@@ -1,0 +1,21 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    app: nfs-subdir-external-provisioner
+    chart: nfs-subdir-external-provisioner-4.0.17
+    heritage: Helm
+    release: nfs-subdir-external-provisioner
+  name: leader-locking-nfs-subdir-external-provisioner
+rules:
+  - apiGroups:
+      - ''
+    resources:
+      - endpoints
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
