@@ -3,7 +3,7 @@ kind: RoleBinding
 metadata:
   labels:
     app: nfs-subdir-external-provisioner
-    chart: nfs-subdir-external-provisioner-4.0.17
+    chart: nfs-subdir-external-provisioner-4.0.18
     heritage: Helm
     release: nfs-subdir-external-provisioner
   name: leader-locking-nfs-subdir-external-provisioner

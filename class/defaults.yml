@@ -11,4 +11,4 @@ parameters:
       storageClass:
         accessModes: ReadWriteMany
     charts:
-      nfs_subdir_external_provisioner: 4.0.17
+      nfs_subdir_external_provisioner: 4.0.18
