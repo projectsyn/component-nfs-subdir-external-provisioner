@@ -5,9 +5,6 @@ parameters:
     namespace: syn-nfs-subdir-external-provisioner
     release_name: ${_instance}
     helm_values:
-      image:
-        # Workaround until https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/pull/252 has been merged
-        repository: registry.k8s.io/sig-storage/nfs-subdir-external-provisioner
       storageClass:
         accessModes: ReadWriteMany
     charts:
