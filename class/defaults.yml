@@ -2,6 +2,7 @@ parameters:
   nfs_subdir_external_provisioner:
     =_metadata:
       multi_instance: true
+      multi_tenant: true
     namespace: syn-nfs-subdir-external-provisioner
     release_name: ${_instance}
     helm_values:

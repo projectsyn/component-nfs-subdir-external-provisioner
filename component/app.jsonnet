@@ -5,6 +5,10 @@ local argocd = import 'lib/argocd.libjsonnet';
 
 local app = argocd.App('nfs-subdir-external-provisioner', params.namespace);
 
+local appPath =
+  local project = std.get(std.get(app, 'spec', {}), 'project', 'syn');
+  if project == 'syn' then 'apps' else 'apps-%s' % project;
+
 {
-  'nfs-subdir-external-provisioner': app,
+  ['%s/nfs-subdir-external-provisioner' % appPath]: app,
 }

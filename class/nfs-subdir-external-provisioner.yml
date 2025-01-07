@@ -10,7 +10,7 @@ parameters:
       - input_paths:
           - nfs-subdir-external-provisioner/component/app.jsonnet
         input_type: jsonnet
-        output_path: apps/
+        output_path: .
       - input_paths:
           - nfs-subdir-external-provisioner/component/main.jsonnet
         input_type: jsonnet
